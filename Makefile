@@ -53,3 +53,12 @@ todoapp-run:
 	export POSTGRES_HOST=localhost && \
 	sudo go mod tidy && \
 	go run ${PROJECT_ROOT}/cmd/todoapp/main.go
+
+logs-cleanup:
+	@read -p "Очистить все log файлы? Опасность утери логов. [y/N]: " ans; \
+	if [ "$$ans" = "y" ]; then \
+		sudo rm -rf ${PROJECT_ROOT}/out/logs && \
+		echo "Файлы логов очищены"; \
+	else \
+		echo "Очистка логов отменена"; \
+	fi
