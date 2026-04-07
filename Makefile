@@ -54,6 +54,12 @@ todoapp-run:
 	sudo go mod tidy && \
 	go run ${PROJECT_ROOT}/cmd/todoapp/main.go
 
+todoapp-deploy:
+	@docker compose up -d --build todoapp
+
+todoapp-undeploy:
+	@docker compose down todoapp
+
 logs-cleanup:
 	@read -p "Очистить все log файлы? Опасность утери логов. [y/N]: " ans; \
 	if [ "$$ans" = "y" ]; then \
@@ -62,3 +68,5 @@ logs-cleanup:
 	else \
 		echo "Очистка логов отменена"; \
 	fi
+ps:
+	@docker compose ps
