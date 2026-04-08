@@ -10,7 +10,7 @@ import (
 
 type GetTaskResponse TasksDTOResponse
 
-// GetUser godoc
+// GetTask godoc
 // @Summary Получение задачи
 // @Description Получение конкретной задачи по ее ID
 // @Tags tasks

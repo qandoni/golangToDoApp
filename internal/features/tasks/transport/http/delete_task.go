@@ -8,7 +8,7 @@ import (
 	core_http_response "github.com/qandoni/golangToDoApp/internal/core/transport/http/response"
 )
 
-// DeleteUser godoc
+// DeleteTask godoc
 // @Summary Удаление задачи
 // @Description Удалить существующую в системе задачу по ее ID
 // @Tags tasks
