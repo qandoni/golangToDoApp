@@ -93,3 +93,11 @@ func (h *HTTPResponseHandler) JSONResponse(
 		h.log.Error("write HTTP response", zap.Error(err))
 	}
 }
+
+func (h *HTTPResponseHandler) HTMLResponse(html []byte) {
+	h.rw.WriteHeader(http.StatusOK)
+	h.rw.Header().Set("Content-Type", "text/html; charsel=utf-8")
+	if _, err := h.rw.Write(html); err != nil {
+		h.log.Error("write HTML HTTP response", zap.Error(err))
+	}
+}
